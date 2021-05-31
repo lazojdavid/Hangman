@@ -1,4 +1,4 @@
-#this proyect consist in filter a list of data, based on previous requirements
+#this proyect use lambda functions and high order function
 DATA = [
     {
         'name': 'Facundo',
@@ -71,7 +71,7 @@ DATA = [
         'language': 'python',
     },
 ]
-def run():
+def search():
     all_workers = list(filter(lambda worker: worker["language"] == "Python", DATA))
 #   if u want use list comprehension
 #    all_workers = [worker["name"] for worker in DATA if worker["language"] == "python" ]
@@ -81,7 +81,7 @@ def run():
     print("--PERSONS BELLOW WRITE IN PYTHON---")
     for worker in all_workers:
         print(worker)
-    print("----BELLOW WORKING IN PLATZI-----")
+    print("----BELLOW WORKING IN ZI-----")
     for worker in all_platzi_workers:
         print(worker)
     print("--OLDER PEOPLE--")
@@ -90,4 +90,4 @@ def run():
 
 
 if __name__=="__main__":
-    run()
+    search()
