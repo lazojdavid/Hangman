@@ -127,13 +127,24 @@ def select_word(list_words):
 def options():
     pass
 
+def draw_body(b):
+    print(body[b])
+
+    
 def attemps(word_random, tabs): 
     life = 3
     print(f'tienes {life} vidas\n')
     letter_good =""
+    body_ini = print(body[0])
+    tabs_ini ="_ "*len(word_random)
+    b = 0
+    print(tabs_ini)
     while life > 0:
         intento= input("Adivina una letra:\n")
         intento = intento.lower()
+        if life < 3:
+            draw_body(b)
+
         letra_repite = 0
         for i in range(len(word_random)):
             if intento in word_random[i]:
@@ -143,19 +154,35 @@ def attemps(word_random, tabs):
         #guarda el numero de veces que se repite una letra
         letter_good += intento*letra_repite
         if intento not in word_random:
+            b +=2
             print("Letra incorrecta, tu puedes !")
+            draw_body(b)
             life -= 1
+        else:
+            draw_body(b)
         for intento in tabs:
+            
             print(intento, end=" ")
         
         print()
         if len(letter_good) == len(word_random):
-            print("Fin del juego")
-        print(letter_good)
+            print("***Lo lograste***")
+            print()
+            respuesta = int(input("Quieres volver a jugar?:\n 1: Si\n 2: No\n"))
+            if respuesta == 1:
+                again()
+            else:
+                break
         if life == 0:
             print(f'Te quedaste sin vidas, la palabra era {word_random}')
+            break
 def run():
     pass
+
+def again():
+    words()
+
+
 if __name__=='__main__':
     words()
 
