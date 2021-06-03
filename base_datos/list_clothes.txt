@@ -1,0 +1,6 @@
+camisa
+pantalon
+falda
+casaca
+polo
+short
