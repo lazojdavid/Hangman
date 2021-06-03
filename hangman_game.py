@@ -155,7 +155,7 @@ def menu():
              || || 
             ooO Ooo 
 
-    Por: vasquezlazoj
+    By vasquezlazoj
             """)
     
     options = int(input("Seleciona una lista:\n1. Ropa:\n2. Animales\n3. Familiares\n"))
@@ -231,7 +231,5 @@ def attemps(word_random, tabs):
                 menu()    
             else:
                 break
-def run():
-    pass
 if __name__=='__main__':
     menu()
